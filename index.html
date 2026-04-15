@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,15 +10,15 @@
 <body>
 
 <!-- HEADER -->
-<header>
+<header class="header">
   <div class="container header-content">
 
-    <div class="logo">KATINEUNG<span>TOTO</span></div>
+    <h1 class="logo">KATINEUNG<span>TOTO</span></h1>
 
-    <!-- HAMBURGER -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- TOGGLE MENU -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-    <nav id="menu">
+    <nav id="menu" class="nav">
       <a href="index.html">Beranda</a>
       <a href="pages/games.html">Games</a>
       <a href="pages/promo.html">Promo</a>
@@ -29,33 +30,41 @@
 
 <!-- BANNER -->
 <section class="banner">
-  <div class="banner-content">
-    <h1>BONUS SPECIAL</h1>
-    <p>Mainkan game favoritmu sekarang!</p>
-    <button>Main Sekarang</button>
+  <div class="banner-overlay">
+    <div class="banner-content">
+      <h2>BONUS SPECIAL</h2>
+      <p>Mainkan game favoritmu sekarang!</p>
+      <button class="btn-primary" onclick="startGame()">Main Sekarang</button>
+    </div>
   </div>
 </section>
 
 <!-- GAMES -->
 <section class="games">
   <div class="container">
-    <h2>Game Populer</h2>
+    <h2 class="section-title">Game Populer</h2>
 
     <div class="game-grid">
 
       <div class="card">
         <img src="images/game1.jpg" alt="Game 1">
-        <p>Game 1</p>
+        <div class="card-body">
+          <p>Game 1</p>
+        </div>
       </div>
 
       <div class="card">
         <img src="images/game2.jpg" alt="Game 2">
-        <p>Game 2</p>
+        <div class="card-body">
+          <p>Game 2</p>
+        </div>
       </div>
 
       <div class="card">
         <img src="images/game3.jpg" alt="Game 3">
-        <p>Game 3</p>
+        <div class="card-body">
+          <p>Game 3</p>
+        </div>
       </div>
 
     </div>
@@ -63,10 +72,21 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <p>© 2026 KATINEUNG TOTO</p>
+<footer class="footer">
+  <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
 </footer>
 
-<script src="js/script.js"></script>
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+
+  function startGame() {
+    alert("Game akan segera dimulai!");
+  }
+</script>
+
 </body>
 </html>
+```

@@ -25,10 +25,10 @@
       <a href="pages/contact.html">Kontak</a>
     </nav>
 
-    <!-- AUTH BUTTON -->
+    <!-- AUTH BUTTON (LINK HALAMAN) -->
     <div class="auth-buttons">
-      <button class="btn-login" onclick="openLogin()">Login</button>
-      <button class="btn-register" onclick="openRegister()">Register</button>
+      <a href="pages/login.html" class="btn-login">Login</a>
+      <a href="pages/register.html" class="btn-register">Register</a>
     </div>
 
   </div>
@@ -85,29 +85,6 @@
   <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
 </footer>
 
-<!-- LOGIN MODAL -->
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('loginModal')">&times;</span>
-    <h2>Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button class="btn-primary">Masuk</button>
-  </div>
-</div>
-
-<!-- REGISTER MODAL -->
-<div id="registerModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('registerModal')">&times;</span>
-    <h2>Register</h2>
-    <input type="text" placeholder="Username">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button class="btn-primary">Daftar</button>
-  </div>
-</div>
-
 <!-- SCRIPT -->
 <script>
   function toggleMenu() {
@@ -116,25 +93,6 @@
 
   function startGame() {
     alert("Game akan segera dimulai!");
-  }
-
-  function openLogin() {
-    document.getElementById("loginModal").style.display = "flex";
-  }
-
-  function openRegister() {
-    document.getElementById("registerModal").style.display = "flex";
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-
-  // klik luar modal = tutup
-  window.onclick = function(event) {
-    if (event.target.classList.contains("modal")) {
-      event.target.style.display = "none";
-    }
   }
 </script>
 

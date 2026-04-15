@@ -1,28 +1,81 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Games</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - KATINEUNG TOTO</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">GAMEZONE</div>
-  <nav>
-    <a href="../index.html">Beranda</a>
-    <a href="games.html">Games</a>
-    <a href="promo.html">Promo</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-content">
+
+    <h1 class="logo">KATINEUNG<span>TOTO</span></h1>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="menu" class="nav">
+      <a href="../index.html">Beranda</a>
+      <a href="games.html" class="active">Games</a>
+      <a href="promo.html">Promo</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+
+  </div>
 </header>
 
-<h2 style="text-align:center;">Daftar Game</h2>
+<!-- GAMES SECTION -->
+<section class="games">
+  <div class="container">
 
-<div class="game-grid">
-  <div class="card"><img src="../images/game1.jpg"><p>Game A</p></div>
-  <div class="card"><img src="../images/game2.jpg"><p>Game B</p></div>
-  <div class="card"><img src="../images/game3.jpg"><p>Game C</p></div>
-</div>
+    <h2 class="section-title">Daftar Game</h2>
+
+    <div class="game-grid">
+
+      <div class="card">
+        <img src="../images/game1.jpg" alt="Game A">
+        <div class="card-body">
+          <p>Game A</p>
+          <button class="btn-primary">Mainkan</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../images/game2.jpg" alt="Game B">
+        <div class="card-body">
+          <p>Game B</p>
+          <button class="btn-primary">Mainkan</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../images/game3.jpg" alt="Game C">
+        <div class="card-body">
+          <p>Game C</p>
+          <button class="btn-primary">Mainkan</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
+```

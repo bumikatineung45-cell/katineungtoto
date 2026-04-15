@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATINEUNG TOTO</title>
+  <meta name="theme-color" content="#000000">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,15 +16,20 @@
 
     <h1 class="logo">KATINEUNG<span>TOTO</span></h1>
 
-    <!-- TOGGLE MENU -->
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
     <nav id="menu" class="nav">
-      <a href="index.html">Beranda</a>
+      <a href="index.html" class="active">Beranda</a>
       <a href="pages/games.html">Games</a>
       <a href="pages/promo.html">Promo</a>
       <a href="pages/contact.html">Kontak</a>
     </nav>
+
+    <!-- AUTH BUTTON -->
+    <div class="auth-buttons">
+      <button class="btn-login" onclick="openLogin()">Login</button>
+      <button class="btn-register" onclick="openRegister()">Register</button>
+    </div>
 
   </div>
 </header>
@@ -50,6 +56,7 @@
         <img src="images/game1.jpg" alt="Game 1">
         <div class="card-body">
           <p>Game 1</p>
+          <button class="btn-primary" onclick="startGame()">Mainkan</button>
         </div>
       </div>
 
@@ -57,6 +64,7 @@
         <img src="images/game2.jpg" alt="Game 2">
         <div class="card-body">
           <p>Game 2</p>
+          <button class="btn-primary" onclick="startGame()">Mainkan</button>
         </div>
       </div>
 
@@ -64,6 +72,7 @@
         <img src="images/game3.jpg" alt="Game 3">
         <div class="card-body">
           <p>Game 3</p>
+          <button class="btn-primary" onclick="startGame()">Mainkan</button>
         </div>
       </div>
 
@@ -76,6 +85,29 @@
   <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
 </footer>
 
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('loginModal')">&times;</span>
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button class="btn-primary">Masuk</button>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('registerModal')">&times;</span>
+    <h2>Register</h2>
+    <input type="text" placeholder="Username">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button class="btn-primary">Daftar</button>
+  </div>
+</div>
+
 <!-- SCRIPT -->
 <script>
   function toggleMenu() {
@@ -84,6 +116,25 @@
 
   function startGame() {
     alert("Game akan segera dimulai!");
+  }
+
+  function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+  }
+
+  function openRegister() {
+    document.getElementById("registerModal").style.display = "flex";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  // klik luar modal = tutup
+  window.onclick = function(event) {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+    }
   }
 </script>
 

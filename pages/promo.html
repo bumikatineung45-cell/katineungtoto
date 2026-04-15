@@ -1,29 +1,75 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Promo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo - KATINEUNG TOTO</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">GAMEZONE</div>
-  <nav>
-    <a href="../index.html">Beranda</a>
-    <a href="games.html">Games</a>
-    <a href="promo.html">Promo</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-content">
+
+    <h1 class="logo">KATINEUNG<span>TOTO</span></h1>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="menu" class="nav">
+      <a href="../index.html">Beranda</a>
+      <a href="games.html">Games</a>
+      <a href="promo.html" class="active">Promo</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+
+  </div>
 </header>
 
+<!-- PROMO SECTION -->
 <section class="promo">
-  <h2>Promo Terbaru</h2>
-  <div class="promo-box">
-    <div class="promo-card">Bonus 100%</div>
-    <div class="promo-card">Free Spin</div>
-    <div class="promo-card">Cashback</div>
+  <div class="container">
+
+    <h2 class="section-title">Promo Terbaru</h2>
+
+    <div class="promo-grid">
+
+      <div class="promo-card">
+        <h3>Bonus 100%</h3>
+        <p>Dapatkan bonus deposit hingga 100% untuk member baru.</p>
+        <button class="btn-primary">Ambil Promo</button>
+      </div>
+
+      <div class="promo-card">
+        <h3>Free Spin</h3>
+        <p>Mainkan slot favorit dan dapatkan free spin setiap hari.</p>
+        <button class="btn-primary">Ambil Promo</button>
+      </div>
+
+      <div class="promo-card">
+        <h3>Cashback</h3>
+        <p>Cashback mingguan hingga 10% tanpa syarat ribet.</p>
+        <button class="btn-primary">Ambil Promo</button>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
+
 </body>
 </html>
+```

@@ -1,4 +1,5 @@
 let number = 1000000;
+let isRunning = false;
 
 function formatNumber(num) {
   return num.toLocaleString("id-ID");
@@ -6,22 +7,35 @@ function formatNumber(num) {
 
 function updateJackpot() {
   const el = document.getElementById("jackpot-number");
-  if (!el) return;
+  if (!el || isRunning) return;
 
-  let target = number + Math.floor(Math.random() * 5000);
+  isRunning = true;
 
-  let interval = setInterval(() => {
-    number += Math.floor((target - number) / 10);
+  const start = number;
+  const target = number + Math.floor(Math.random() * 5000 + 1000);
+  const duration = 1000; // 1 detik animasi
+  const startTime = performance.now();
 
+  function animate(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+
+    // easing biar smooth (ease-out)
+    const ease = 1 - Math.pow(1 - progress, 3);
+
+    number = Math.floor(start + (target - start) * ease);
     el.innerText = formatNumber(number);
 
-    if (number >= target - 10) {
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
       number = target;
       el.innerText = formatNumber(number);
-      clearInterval(interval);
+      isRunning = false;
     }
-  }, 50);
+  }
+
+  requestAnimationFrame(animate);
 }
 
-// jalan terus tiap 2 detik
+// jalan tiap 2 detik
 setInterval(updateJackpot, 2000);

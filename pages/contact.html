@@ -1,25 +1,70 @@
+```html id="c9xk2l"
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Kontak</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - KATINEUNG TOTO</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">GAMEZONE</div>
-  <nav>
-    <a href="../index.html">Beranda</a>
-    <a href="games.html">Games</a>
-    <a href="promo.html">Promo</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-content">
+
+    <h1 class="logo">KATINEUNG<span>TOTO</span></h1>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="menu" class="nav">
+      <a href="../index.html">Beranda</a>
+      <a href="games.html">Games</a>
+      <a href="promo.html">Promo</a>
+      <a href="contact.html" class="active">Kontak</a>
+    </nav>
+
+  </div>
 </header>
 
-<section style="text-align:center; padding:40px;">
-  <h2>Hubungi Kami</h2>
-  <p>Email: support@gamezone.com</p>
+<!-- CONTACT SECTION -->
+<section class="contact">
+  <div class="container">
+
+    <h2 class="section-title">Hubungi Kami</h2>
+
+    <div class="contact-box">
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> support@katineungtoto.com</p>
+        <p><strong>WhatsApp:</strong> 08xxxxxxxxxx</p>
+        <p><strong>Jam Layanan:</strong> 24 Jam</p>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Nama Anda" required>
+        <input type="email" placeholder="Email Anda" required>
+        <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Kirim Pesan</button>
+      </form>
+
+    </div>
+
+  </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 KATINEUNG TOTO | All Rights Reserved</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
+```

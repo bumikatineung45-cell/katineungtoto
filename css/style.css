@@ -1,3 +1,4 @@
+```css
 /* ================= RESET ================= */
 * {
   box-sizing: border-box;
@@ -20,7 +21,7 @@ body {
 }
 
 /* ================= HEADER ================= */
-header {
+.header {
   background: black;
   border-bottom: 1px solid #222;
 }
@@ -43,7 +44,7 @@ header {
 }
 
 /* NAV */
-nav a {
+.nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
@@ -51,15 +52,26 @@ nav a {
   font-size: 14px;
 }
 
-nav a:hover {
+.nav a:hover,
+.nav a.active {
   color: #ff00cc;
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* ================= BANNER ================= */
 .banner {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* 🔥 sesuai 1920x1080 */
+  aspect-ratio: 16 / 9;
   background: url('../images/banner.jpg') no-repeat center;
   background-size: cover;
   display: flex;
@@ -79,21 +91,21 @@ nav a:hover {
   position: relative;
   text-align: center;
   max-width: 600px;
-  padding: 20px;
 }
 
-.banner-content h1 {
+.banner-content h1,
+.banner-content h2 {
   font-size: 40px;
   margin-bottom: 10px;
   text-shadow: 0 0 15px #ff00cc;
 }
 
 .banner-content p {
-  font-size: 16px;
   margin-bottom: 20px;
 }
 
-.banner button {
+/* BUTTON */
+.btn-primary {
   padding: 12px 25px;
   background: #ff00cc;
   border: none;
@@ -104,9 +116,16 @@ nav a:hover {
   font-weight: bold;
 }
 
-.banner button:hover {
+.btn-primary:hover {
   background: #cc0099;
   box-shadow: 0 0 12px #ff00cc;
+}
+
+/* ================= SECTION ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
 }
 
 /* ================= GAMES ================= */
@@ -114,26 +133,17 @@ nav a:hover {
   padding: 50px 0;
 }
 
-.games h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-}
-
 .game-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 /* CARD */
 .card {
   background: #1c1c1c;
-  padding: 12px;
   border-radius: 12px;
-  text-align: center;
-  flex: 1;
-  min-width: 260px;
+  overflow: hidden;
   transition: 0.3s;
   border: 1px solid #222;
 }
@@ -147,36 +157,71 @@ nav a:hover {
   width: 100%;
   height: 170px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.card p {
-  margin-top: 10px;
-  font-size: 14px;
+.card-body {
+  padding: 15px;
+  text-align: center;
 }
 
 /* ================= PROMO ================= */
-.promo-box {
-  display: flex;
-  gap: 15px;
-  padding: 40px 0;
+.promo {
+  padding: 50px 0;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .promo-card {
-  flex: 1;
   background: #222;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
   transition: 0.3s;
+  border: 1px solid #333;
 }
 
 .promo-card:hover {
-  box-shadow: 0 0 20px #3333ff;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ff00cc;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  padding: 50px 0;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-info {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+}
+
+.contact-form button {
+  width: 100%;
 }
 
 /* ================= FOOTER ================= */
-footer {
+.footer {
   background: black;
   text-align: center;
   padding: 15px;
@@ -187,45 +232,39 @@ footer {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
 
-  .header-content {
-    flex-direction: column;
-    text-align: center;
+  .menu-toggle {
+    display: block;
   }
 
-  nav {
+  .nav {
+    display: none;
+    flex-direction: column;
     margin-top: 10px;
   }
 
-  nav a {
-    display: inline-block;
-    margin: 5px;
+  .nav.active {
+    display: flex;
   }
 
-  .banner {
-    height: 230px;
+  .nav a {
+    margin: 10px 0;
   }
 
-  .banner-content h1 {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .banner-content h1,
+  .banner-content h2 {
     font-size: 26px;
   }
 
-  .banner button {
+  .btn-primary {
     width: 100%;
   }
 
-  .game-grid {
-    flex-direction: column;
-  }
-
-  .card {
-    min-width: 100%;
-  }
-
-  .promo-box {
-    flex-direction: column;
-  }
-
-  .games {
-    padding: 30px 0;
+  .contact-box {
+    grid-template-columns: 1fr;
   }
 }
+```
